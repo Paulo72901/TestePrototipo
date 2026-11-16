@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080506">
+<title>Finalize sua compra | Amor — e — Mistério</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="key">⚿</span><span>AMOR <i>— e —</i> MISTÉRIO</span></a>
+  <div class="top-trust"><span>♧ Compra segura</span><span class="sep"></span><span>♙ Privacidade garantida</span></div>
+</header>
+<main class="shell">
+  <section class="intro">
+    <p class="eyebrow">UMA SURPRESA ESCOLHIDA PARA VOCÊ</p>
+    <h1>Finalize <em>sua compra</em></h1>
+    <p>Escolha sua Caixa Misteriosa, informe o CEP e descubra o valor do seu pedido.</p>
+  </section>
+  <div class="layout">
+    <section class="panel selection">
+      <div class="step"><span class="step-no">1</span><div><h2>Escolha sua caixa</h2><p>Uma experiência feita para surpreender.</p></div></div>
+      <div class="products">
+        <label class="product">
+          <input type="radio" name="product" value="small">
+          <span class="check"></span><span class="gift gift-small"><i></i></span>
+          <b>Pequena</b><strong>R$ 59,90</strong>
+        </label>
+        <label class="product selected">
+          <input type="radio" name="product" value="medium" checked>
+          <span class="check"></span><span class="gift gift-medium"><i></i></span>
+          <b>Média</b><strong>R$ 89,90</strong>
+        </label>
+        <label class="product">
+          <input type="radio" name="product" value="large">
+          <span class="check"></span><span class="gift gift-large"><i></i></span>
+          <b>Grande</b><strong>R$ 129,90</strong>
+        </label>
+      </div>
+      <p class="test-note">Valores e medidas demonstrativos para a fase de testes.</p>
+      <div class="step cep-step"><span class="step-no">2</span><div><h2>Informe seu CEP</h2><p>Consulte o frete estimado para sua região.</p></div></div>
+      <label class="field-label" for="cep">CEP de entrega</label>
+      <div class="cep-row"><input id="cep" inputmode="numeric" maxlength="9" placeholder="Digite seu CEP" autocomplete="postal-code"><button id="quote" class="quote">Calcular frete</button></div>
+      <div class="shipping-hint"><span>♧</span> Frete pela Loggi <b>•</b> Entrega para todo o Brasil</div>
+      <div class="error" id="error" role="alert"></div>
+      <div class="demo-alert">AMBIENTE DE TESTE · O frete exibido ainda não é uma cotação oficial da Loggi.</div>
+    </section>
+    <aside class="panel order">
+      <div class="order-heading"><span>♧</span><h2>Resumo do pedido</h2></div>
+      <div class="summary-line"><span id="summary-name">Caixa Misteriosa Média</span><b id="summary-price">R$ 89,90</b></div>
+      <div class="summary-line"><span>Frete (Loggi)</span><b id="summary-freight">—</b></div>
+      <div class="total"><b>Total</b><strong id="summary-total">R$ 89,90*</strong></div>
+      <button class="pay" id="pay" disabled>Continuar para pagamento <span>↗</span></button>
+      <div class="payment-brand"><b>mercado<br>pago</b><span>Você será direcionada ao ambiente de pagamento do Mercado Pago.</span></div>
+      <p class="fineprint">*O valor do frete será calculado após informar o CEP. Pagamento não será iniciado enquanto o pedido estiver em modo de teste.</p>
+    </aside>
+  </div>
+  <section class="benefits">
+    <div><span>♧</span><b>Uma surpresa<br>especial</b></div><div><span>♧</span><b>Envio acompanhado<br>e seguro</b></div><div><span>♧</span><b>Pagamento<br>protegido</b></div><div><span>♧</span><b>Privacidade<br>respeitada</b></div>
+  </section>
+  <footer>AMOR — e — MISTÉRIO <span>Uma surpresa escolhida para você.</span></footer>
+</main>
+<script src="/app.js" defer></script>
+</body></html>

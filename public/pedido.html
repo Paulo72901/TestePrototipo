@@ -1,0 +1,19 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seu pedido | Amor — e — Mistério</title><link rel="stylesheet" href="/styles.css"></head><body>
+<header class="topbar"><a class="brand" href="/">⚿ <span>AMOR <i>— e —</i> MISTÉRIO</span></a><div class="top-trust">♧ Compra segura <span class="sep"></span> ♙ Privacidade garantida</div></header>
+<main class="shell"><section class="panel order" style="max-width:680px;margin:35px auto;padding:30px">
+<p class="eyebrow">SEU PEDIDO FOI REGISTRADO</p><h1 style="font:500 42px 'Cormorant Garamond',serif;margin:0 0 10px">Quase lá. <em style="color:var(--gold);font-style:normal">Sua surpresa espera por você.</em></h1>
+<p style="color:#dfcbc4">Confira o resumo e continue para o pagamento.</p>
+<div id="summary" style="padding:16px 0">Carregando pedido...</div>
+<div id="payment" class="demo-alert">Ambiente de testes: o pagamento não será aberto até a configuração do link oficial.</div>
+<div id="error" class="error"></div>
+<p class="fineprint" style="margin-top:20px">O formulário de entrega será liberado somente depois que o pagamento for conferido pela equipe.</p>
+</section></main>
+<script>
+const ref=new URLSearchParams(location.search).get("ref");
+const money=n=>Number(n).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+async function load(){try{const r=await fetch("/api/order-summary?ref="+encodeURIComponent(ref||""));const d=await r.json();if(!r.ok)throw new Error(d.error);
+document.querySelector("#summary").innerHTML=`<div class="summary-line"><span>${d.product}</span><b>${money(d.productAmount)}</b></div><div class="summary-line"><span>Frete (Loggi estimado)</span><b>${money(d.shippingAmount)}</b></div><div class="total"><b>Total</b><strong>${money(d.total)}</strong></div><div class="demo-alert">Pedido ${d.reference}. Como o link de valor aberto não recebe o total automaticamente, confira e digite exatamente <b>${money(d.total)}</b> no Mercado Pago.</div>`;
+document.querySelector("#payment").textContent=d.paymentLinkConfigured?"Link de pagamento configurado no servidor.":"Link do Mercado Pago ainda não configurado para este ambiente de teste.";
+}catch(e){document.querySelector("#error").textContent=e.message}}
+load();
+</script></body></html>
